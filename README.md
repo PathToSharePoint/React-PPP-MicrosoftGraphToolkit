@@ -1,2 +1,5 @@
-# React-PPP-MicrosoftGraphToolkit
-Property Pane Portal demo with Microsoft Graph Toolkit controls
+# react-ppp-mgt
+
+## Summary
+
+Package provided for debugging of TeamChannelPicker.
