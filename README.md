@@ -2,4 +2,4 @@
 
 ## Summary
 
-Package provided for debugging of TeamChannelPicker.
+Package provided for debugging of the MGT Login component.
