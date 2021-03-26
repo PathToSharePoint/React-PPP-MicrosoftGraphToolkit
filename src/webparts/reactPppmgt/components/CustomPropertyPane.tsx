@@ -1,4 +1,4 @@
-import { Login, PeoplePicker, Person, TeamsChannelPicker } from '@microsoft/mgt-react';
+import { GroupType, Login, PeoplePicker, Person, TeamsChannelPicker } from '@microsoft/mgt-react';
 import * as React from 'react';
 
 import { ICustomPropertyPaneProps } from './ICustomPropertyPaneProps';
@@ -37,18 +37,31 @@ export const CustomPropertyPane: React.FunctionComponent<ICustomPropertyPaneProp
                     }}
                     logoutCompleted={(e) => { console.log("logout completed"); }}
                 />
-                <PeoplePicker
-                    data-Property="mgtPeoplePicker"
-                    selectionMode="single"
-                    defaultSelectedUserIds={[props.propertyBag.mgtPeoplePicker]}
-                    selectionChanged={(e: any) => {
-                        console.log(e.detail);
-                        let users = [];
-                        e.detail.forEach(dtl => users.push(dtl.userPrincipalName));
-                        updateWPProperty("mgtPeoplePicker", users[0]);
-                    }}
-                />
-                <TeamsChannelPicker
+                <PropertyPanePortal propertyPaneHosts={props.propertyPaneHosts}>
+                    <PeoplePicker
+                        data-Property="mgtPeoplePicker"
+                        selectionMode="single"
+                        defaultSelectedUserIds={[props.propertyBag.mgtPeoplePicker]}
+                        selectionChanged={(e: any) => {
+                            console.log(e.detail);
+                            let users = [];
+                            e.detail.forEach(dtl => users.push(dtl.userPrincipalName));
+                            updateWPProperty("mgtPeoplePicker", users[0]);
+                        }}
+                    />
+                    <PeoplePicker
+                        data-Property="mgtGroupPicker"
+                        selectionMode="single"
+                        groupType={GroupType.unified}
+                        defaultSelectedUserIds={[props.propertyBag.mgtPeoplePicker]}
+                        selectionChanged={(e: any) => {
+                            console.log(e.detail);
+                            let users = [];
+                            e.detail.forEach(dtl => users.push(dtl.userPrincipalName));
+                            updateWPProperty("mgtGroupPicker", users[0]);
+                        }}
+                    />
+                    {/* <TeamsChannelPicker
                     data-Property="mgtTeamsChannelPicker"
                     defaultValue={[props.propertyBag.mgtTeamsChannelPicker]}
 
@@ -58,8 +71,7 @@ export const CustomPropertyPane: React.FunctionComponent<ICustomPropertyPaneProp
                         e.detail.forEach(dtl => slctns.push(dtl.channel));
                         updateWPProperty("mgtTeamsChannelPicker", slctns[0]);
                     }}
-                />
-                <PropertyPanePortal propertyPaneHosts={props.propertyPaneHosts}>
+                /> */}
                 </PropertyPanePortal>
             </Provider>
         </>

@@ -21,7 +21,7 @@ export interface IReactPPPMGTWebPartProps {
   description: string;
   mgtPerson: string;
   mgtPeoplePicker: string;
-  mgtTeamsChannelPicker: string;
+  mgtGroupPicker: string;
 }
 
 export default class ReactPPPMGTWebPart extends BaseClientSideWebPart<IReactPPPMGTWebPartProps> {
@@ -83,7 +83,7 @@ export default class ReactPPPMGTWebPart extends BaseClientSideWebPart<IReactPPPM
                 PropertyPaneHorizontalRule(),
                 PropertyPaneHost('mgtPeoplePicker', this.propertyPaneHosts),
                 PropertyPaneHorizontalRule(),
-                PropertyPaneHost('mgtTeamsChannelPicker', this.propertyPaneHosts),
+                PropertyPaneHost('mgtGroupPicker', this.propertyPaneHosts),
                 PropertyPaneHorizontalRule(),
           ]
         }

@@ -2,7 +2,7 @@
   "id": "9667a8c5-b059-4214-b89f-f29a718a61c5",
   "alias": "ReactPPPMGTWebPart",
   "componentType": "WebPart",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifestVersion": 2,
   "requiresCustomScript": false,
   "supportedHosts": [
@@ -35,7 +35,7 @@
     "scriptResources": {
       "react-pppmgt-web-part": {
         "type": "path",
-        "path": "react-pppmgt-web-part_71d0fae7306abfe28a4b.js"
+        "path": "react-pppmgt-web-part_daceea913e7e79407469.js"
       },
       "tslib": {
         "type": "component",
